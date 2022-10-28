@@ -5,9 +5,16 @@ class CreateProductController{
     async handle(req: Request, res: Response){
         const createProductService = new CreateProductService();
 
-        const { name, price, description, banner, category_id } = req.body;
-        const product = await createProductService.execute({name, price, description, banner, category_id});
-        return res.json(product);
+        const { name, price, description, category_id } = req.body;
+
+        if(!req.file){
+            throw new Error("Error uploading file.");
+        } else {
+            const { originalname, filename: banner } = req.file;
+            const product = await createProductService.execute({name, price, description, banner, category_id});
+            return res.json(product);
+        }
+        
     }
 }
 
