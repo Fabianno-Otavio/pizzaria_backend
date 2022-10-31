@@ -11,7 +11,8 @@ class AddItemService {
 
         const existItem = await prismaClient.item.findFirst({
             where: { 
-                order_id: order_id, product_id: product_id 
+                order_id: order_id, 
+                product_id: product_id 
             }
         });
 
