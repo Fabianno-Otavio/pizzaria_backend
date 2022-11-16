@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
-    "start": "npx prisma migrate dev node ./src/server",
+    "start": "npx prisma migrate deploy node ./src/server",
     "build": "npx tsc"
   },
   "devDependencies": {
