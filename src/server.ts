@@ -27,5 +27,3 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction)=>{
         message: 'Internal Server Error'
     })
 });
-
-app.listen(3003, () => {console.log('Listening on port 3003!')});
