@@ -25,8 +25,8 @@ const router = Router();
 
 const upload = multer(uploadConfig.upload("./tmp"));
 
-router.get('/', (req, res) => {
-    res.json({
+router.get('/', (req, res) => { 
+    return res.json({
         ok: true
     })
 });
